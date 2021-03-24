@@ -76,13 +76,12 @@ const TransactionListing = (props) => {
   return (
     <TableContainer component={Paper}>
       <Button
-        data-testid="home-id"
         className={classes.Button}
         onClick={goHome}
         variant="outlined"
         color="primary"
       >
-        Home
+        Go To Main Accounts
       </Button>
       <Table className={classes.table}>
         <TableHead>

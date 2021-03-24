@@ -17,11 +17,15 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(5),
   },
 
+  Button: {
+    margin: theme.spacing(2),
+  },
   active: {
     color: "#11cb5f",
   },
 }));
 const Account = () => {
+  console.log("inside account");
   const classes = useStyles();
 
   const [accountData, setAccountData] = useState([]);
@@ -33,6 +37,9 @@ const Account = () => {
     "transactions-3.json",
     "transactions-4.json",
   ];
+  const goHome = () => {
+    history.goBack();
+  };
   const handleTransactionList = (index, id) => {
     try {
       let jsonFile = accountMap[index];
@@ -61,6 +68,7 @@ const Account = () => {
       })
       .then(
         function (myJson) {
+          console.log(myJson);
           setAccountData(myJson);
         },
         (error) => {
@@ -111,7 +119,6 @@ const Account = () => {
           </CardContent>
           <CardActions align="center">
             <Button
-              data-testid="button-id"
               size="medium"
               onClick={() => {
                 handleTransactionList(index, items.id);
@@ -126,8 +133,17 @@ const Account = () => {
   }
   return (
     <div>
+      <Button
+        size="small"
+        color="primary"
+        onClick={goHome}
+        variant="outlined"
+        className={classes.Button}
+      >
+        <b>Home</b>
+      </Button>
       <Typography component="h1" variant="h4" align="center">
-        Bank Accounts
+        Accounts
       </Typography>
       {accountList}
     </div>

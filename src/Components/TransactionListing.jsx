@@ -34,7 +34,7 @@ const TransactionListing = (props) => {
     getTransactionList();
   });
   const getTransactionList = () => {
-    let url = "//BankApp_React" + jsonFile;
+    let url = "/BankApp_React" + jsonFile;
     fetch(url, {
       headers: {
         "Content-Type": "application/json",

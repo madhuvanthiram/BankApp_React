@@ -55,7 +55,7 @@ const Account = () => {
   };
 
   const getAccountData = () => {
-    fetch("/BankApp_React/accounts.json", {
+    fetch("./accounts.json", {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",

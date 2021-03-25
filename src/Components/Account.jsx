@@ -55,7 +55,7 @@ const Account = () => {
   };
 
   const getAccountData = () => {
-    fetch("./accounts.json", {
+    fetch("/accounts.json", {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",

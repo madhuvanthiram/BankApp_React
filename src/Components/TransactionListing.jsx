@@ -34,7 +34,7 @@ const TransactionListing = (props) => {
     getTransactionList();
   });
   const getTransactionList = () => {
-    let url = "./" + jsonFile;
+    let url = "/" + jsonFile;
     fetch(url, {
       headers: {
         "Content-Type": "application/json",
